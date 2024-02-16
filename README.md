@@ -1,6 +1,6 @@
-# islami_project
+# islamic_project
 
-A new Flutter project.
+My First Flutter Project with Route Academy
 
 ## Getting Started
 
