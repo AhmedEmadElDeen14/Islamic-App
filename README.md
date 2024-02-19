@@ -32,8 +32,8 @@ An Islamic application developed using Flutter that allows users to browse the c
 - Explore the radio UI screen (currently inactive).
 
 **Theme Persistence:**
-The selected theme persists across app restarts. If you close and reopen the app, it will retain the chosen theme.
+- The selected theme persists across app restarts. If you close and reopen the app, it will retain the chosen theme.
 
 
 **Route Academy:**
-This project was developed during the Flutter course at Route Academy, where the fundamentals of Flutter, Dart programming, and mobile app development were covered.
+- This project was developed during the Flutter course at Route Academy, where the fundamentals of Flutter, Dart programming, and mobile app development were covered.
