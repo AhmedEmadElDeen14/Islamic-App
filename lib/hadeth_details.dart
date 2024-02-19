@@ -3,6 +3,8 @@ import 'package:islami_project/darkMode/dark_theme_provider.dart';
 import 'package:islami_project/hadeth_model.dart';
 import 'package:islami_project/style.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 
 class HadethDetails extends StatefulWidget {
   static const String routeName = "HadethDetails";
@@ -34,7 +36,7 @@ class _HadethDetailsState extends State<HadethDetails> {
           backgroundColor: Colors.transparent,
           centerTitle: true,
           title: Text(
-            "إسلامي",
+            AppLocalizations.of(context)!.app_name,
             style: Theme.of(context).textTheme.titleLarge,
           ),
         ),

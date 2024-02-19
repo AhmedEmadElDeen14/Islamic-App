@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:islami_project/darkMode/dark_theme_provider.dart';
 import 'package:islami_project/hadeth_details.dart';
 import 'package:islami_project/hadeth_model.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
 
 class AhadethTab extends StatefulWidget {
   const AhadethTab({super.key});
@@ -22,6 +25,7 @@ class _AhadethTabState extends State<AhadethTab> {
 
   @override
   Widget build(BuildContext context) {
+    var themeProvider = Provider.of<ThemeProvider>(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -35,7 +39,7 @@ class _AhadethTabState extends State<AhadethTab> {
           color: Theme.of(context).dividerTheme.color,
         ),
         Text(
-          "الأحاديث",
+          AppLocalizations.of(context)!.ahadeth,
           textAlign: TextAlign.center,
           style: Theme.of(context).textTheme.titleLarge,
         ),
@@ -79,13 +83,14 @@ class _AhadethTabState extends State<AhadethTab> {
 
     for (int i = 0; i < ahadethList.length; i++) {
       List<String> hadethLines = ahadethList[i].trim().split("\n");
-      String hadethTitle = hadethLines[0];
-      ahadethTitle.add(hadethTitle);
+      String hadethTitleArabic = hadethLines[0];
+
+      ahadethTitle.add(hadethTitleArabic);
       hadethLines.removeAt(0);
       List<String> hadethContent = hadethLines;
 
       HadethModel hadethModel =
-          HadethModel(title: hadethTitle, content: hadethContent);
+          HadethModel(title: hadethTitleArabic, content: hadethContent);
       allAhadeth.add(hadethModel);
       setState(() {});
     }

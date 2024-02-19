@@ -6,6 +6,8 @@ import 'package:islami_project/splashScreen.dart';
 import 'package:islami_project/style.dart';
 import 'package:islami_project/sura_details.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 void main() {
   runApp(ChangeNotifierProvider(
@@ -44,32 +46,20 @@ class _MyAppState extends State<MyApp> {
       child: Consumer<ThemeProvider>(
         builder: (BuildContext context, ThemeProvider value, Widget? child) {
           return MaterialApp(
+            localizationsDelegates: AppLocalizations.localizationsDelegates,
+            supportedLocales: AppLocalizations.supportedLocales,
+            locale: Locale(Provider.of<ThemeProvider>(context).languageCode),
             theme: Provider.of<ThemeProvider>(context).isDarkMode
                 ? MyThemeData.darkTheme
                 : MyThemeData.lightTheme,
             darkTheme: MyThemeData.darkTheme,
             debugShowCheckedModeBanner: false,
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             initialRoute: SplashScreen.routeName,
-
             routes: {
-              SplashScreen.routeName: (context) =>  SplashScreen(),
-              HomeScreen.routeName: (context) =>  HomeScreen(),
-              SuraDetails.routeName: (context) =>  SuraDetails(),
-              HadethDetails.routeName: (context) =>  HadethDetails(),
+              SplashScreen.routeName: (context) => SplashScreen(),
+              HomeScreen.routeName: (context) => HomeScreen(),
+              SuraDetails.routeName: (context) => SuraDetails(),
+              HadethDetails.routeName: (context) => HadethDetails(),
             },
           );
         },
